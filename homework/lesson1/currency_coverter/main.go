@@ -17,10 +17,10 @@ func main() {
 	fmt.Scanln(&rub)
 	if rub > 0 {
 		fmt.Println("Курс USD = ", usd)
-		var convertationResult float32 = rub / usd
+		convertationResult := rub / usd
 		fmt.Println("Итого $ ", fmt.Sprintf("%.2f", convertationResult))
 	} else {
-		fmt.Println("Значение не может быть отрецательным")
+		fmt.Println("Значение не может быть отрецательным либо ноль")
 	}
 
 }

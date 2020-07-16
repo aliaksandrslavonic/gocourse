@@ -11,23 +11,23 @@ func main() {
 	// Найти его площадь, периметр и гипотенузу.
 	// Используйте тип данных float64 и функции из пакета math.
 
-	var a, b, c, S, P float64 = 3, 5, 0, 0, 0
+	var firstLeg, secondLeg float64 = 3, 5
 
-	fmt.Println("Введите длинну катета a, по умолчанию a = ", a)
-	fmt.Scanln(&a)
+	fmt.Println("Введите длинну катета a, по умолчанию a = ", firstLeg)
+	fmt.Scanln(&firstLeg)
 
-	fmt.Println("Введите длинну катета b, по умолчанию b = ", b)
-	fmt.Scanln(&b)
+	fmt.Println("Введите длинну катета b, по умолчанию b = ", secondLeg)
+	fmt.Scanln(&secondLeg)
 
-	if (a > 0) && (b > 0) && (a != 0) && (b != 0) {
-		S = (a * b) / 2
-		fmt.Println("Площадь прямоугольного треугольника (S) = ", fmt.Sprintf("%.2f", S))
+	if (firstLeg > 0) && (secondLeg > 0) {
+		area := (firstLeg * secondLeg) / 2
+		fmt.Println("Площадь прямоугольного треугольника = ", fmt.Sprintf("%.2f", area))
 
-		c = math.Sqrt(a*a + b*b)
-		fmt.Println("Гипотенуза = ", fmt.Sprintf("%.2f", c))
+		hypotenuse := math.Sqrt(firstLeg*firstLeg + secondLeg*secondLeg)
+		fmt.Println("Гипотенуза = ", fmt.Sprintf("%.2f", hypotenuse))
 
-		P = a + b + c
-		fmt.Println("Переиметр (P) = ", fmt.Sprintf("%.2f", P))
+		perimeter := firstLeg + secondLeg + hypotenuse
+		fmt.Println("Переиметр = ", fmt.Sprintf("%.2f", perimeter))
 	} else {
 		fmt.Println("Введенные значения не могут быть отрицательными либо равны нулю")
 	}
