@@ -6,17 +6,12 @@ func main() {
 	var number int
 	fmt.Println("Введите число: ")
 	fmt.Scanln(&number)
-	fmt.Println(even_number(number))
+	fmt.Println(isEven(number))
 	fmt.Println(division_by_three(number))
 }
 
-func even_number(number int) (answer string) {
-	if (number % 2) == 0 {
-		answer = "Четное"
-	} else {
-		answer = "Не четное"
-	}
-	return answer
+func isEven(num int) bool {
+	return num%2 == 0
 }
 
 func division_by_three(number int) (answer string) {
