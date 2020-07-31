@@ -1,6 +1,9 @@
 package main
 
-import "fmt"
+import (
+	"fmt"
+	"sort"
+)
 
 type Contact struct {
 	name   string
@@ -17,18 +20,17 @@ func main() {
 		&Contact{"Ruslan", "+375290000015"},
 	}
 
+	fmt.Println("-------Before-------")
 	Show(contacts)
+	fmt.Println("-------After-------")
 	Sort(contacts)
 
 }
 
 func Sort(contacts Contacts) {
-	for idx, contact := range contacts {
-		fmt.Println(idx)
+	sort.Slice(contacts, func(i, j int) bool { return contacts[i].name < contacts[j].name })
+	for _, contact := range contacts {
 		fmt.Println(contact)
-		// if contact.name > contact[idx+1].name {
-		// 	fmt.Println()
-		// }
 	}
 }
 
